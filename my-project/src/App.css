@@ -1,0 +1,21 @@
+.hover-outline:hover{
+    border: 1px solid #9CF098;
+}
+
+.position-right{
+    position: absolute;
+    top: 25%;
+    right: 0%;
+}
+
+.card-clamp{
+    width: clamp(650px, 40vw, 1000px);
+}
+
+.opacity{
+    opacity: 35%;
+}
+
+.supertext{
+    font-size: 5rem;
+}
