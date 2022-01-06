@@ -75,16 +75,16 @@ function AllCards() {
             </span>
           </p>
         </div>
-        <div className="flex flex-col space-y-2 w-64 ml-4 mt-2">
-          <p>Title: {card.Title}</p>
-          <p>Author: {card.Author}</p>
-          <p>Date: {card.date}</p>
-          <p>Topic: {card.Topic}</p>
-        </div>
-        <div className="flex flex-col space-y-2 w-64 mt-2">
-          <p>Uploaded: {card.Uploaded}</p>
-          <p>Summary: {card.Summary}</p>
-        </div>
+        <ul className="flex flex-col space-y-2 w-64 ml-4 mt-2">
+          <li key={card.id}>Title: {card.Title}</li>
+          <li>Author: {card.Author}</li>
+          <li>Date: {card.date}</li>
+          <li>Topic: {card.Topic}</li>
+        </ul>
+        <ul className="hidden md:flex flex-col space-y-2 w-64 mt-2">
+          <li>Uploaded: {card.Uploaded}</li>
+          <li>Summary: {card.Summary}</li>
+        </ul>
       </div>
     </Fragment>
   ));

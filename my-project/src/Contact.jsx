@@ -15,7 +15,7 @@ export default function Contact() {
               All fields are required
             </h2>
             <div className="flex justify-center">
-              <div className="w-3/5">
+              <div className="md:w-3/4">
                 <div className="">
                   <label className="">Name/UserId:</label>
                   <input

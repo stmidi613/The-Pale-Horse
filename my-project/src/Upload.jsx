@@ -13,7 +13,7 @@ export default function Upload() {
               All fields are required
             </h2>
             <div className="flex justify-center">
-              <div className="w-3/5">
+              <div className="m-2 md:m-0 md:w-3/5">
                 <div className="">
                   <label className="">Author:</label>
                   <input
@@ -72,7 +72,7 @@ export default function Upload() {
                     name="image"
                     className="border border-crimson md:w-3/5 ml-8"
                   />
-                  <button className="relative lg:bottom-1 float-right mx-2 w-18 bg-crimson hover:shadow-md text-pale-green py-1 px-2 rounded">
+                  <button className="relative m-2 md:ml-1 text-center w-16 bg-crimson hover:shadow-md text-pale-green py-1 px-1 rounded">
                     Upload
                   </button>
                   <br />

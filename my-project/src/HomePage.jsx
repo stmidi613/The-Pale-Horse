@@ -6,7 +6,6 @@ import PageIndex from "./PageIndex";
 function HomePage() {
   return (
     <Fragment>
-      
       <div className="py-4 flex flex-col md:flex-row flex-wrap place-content-around m-auto">
         <p className="text-crimson py-2">Filter by:</p>
         <div className="px-4 py-2">
@@ -28,6 +27,9 @@ function HomePage() {
         <div className="px-4 py-1">
           <label className="text-crimson mr-4">Keyword(s):</label>
           <input type="search" className="border-2 border-crimson" />
+          <button className="relative bottom-0.5 float-right mx-2 w-18 bg-crimson hover:shadow-md text-pale-green py-1 px-2 rounded">
+            Search
+          </button>
         </div>
       </div>
       <AllCards />
