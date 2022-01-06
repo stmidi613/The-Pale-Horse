@@ -90,7 +90,7 @@ function Navbar() {
                 Profile
               </Link>
               <a
-                href="../../hero-app-react/src/App.jsx"
+                href=""
                 className="text-pale-green text-right hover:underline py-4 px-8 no-underline block"
               >
                 Logout
