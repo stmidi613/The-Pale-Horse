@@ -2,11 +2,12 @@ import { Fragment } from "react/cjs/react.development";
 import "./index.css"
 import "./App.css"
 import LoginNav from "./LoginNav";
+import Navbar from "./Navbar";
 
-export default function Contact() {
+export default function MyContactUs() {
   return (
     <Fragment>
-      <LoginNav />
+      <Navbar />
       <div className="flex flex-col m-8">
         <h1 className="flex justify-center text-crimson text-3xl underline">
           Contact Us

@@ -1,8 +1,10 @@
 import { Fragment } from "react/cjs/react.development";
+import Navbar from "./Navbar";
 
 export default function Upload() {
   return (
     <Fragment>
+      <Navbar />
       <div className="flex flex-col m-8">
         <h1 className="flex justify-center text-crimson text-3xl underline">
           Upload Your Work

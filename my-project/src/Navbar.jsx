@@ -6,20 +6,15 @@ import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className="relative bg-dark-gray">
+    <div className="relative bg-dark-gray mt-2">
       <div className="px-4 sm:px-6">
         <div className="flex justify-start items-center py-6 md:justify-start md:space-x-10">
           <div className="flex place-content-start">
-            <img
-              className="w-8 rounded-full border-2 border-crimson sm:h-10"
-              src=""
-              alt=""
-            />
             <h1 className="text-2xl text-pale-green">The Pale Horse</h1>
           </div>
 
           <NavLink
-            to="/"
+            to="/homepage"
             className="hidden md:block text-base font-medium text-pale-green py-4 border-b-4 border-dark-gray hover:border-pale-green"
           >
             Home page
@@ -30,13 +25,13 @@ function Navbar() {
             Upload Work
             </NavLink>
           <NavLink
-            to="/contact"
+            to="/mycontactus"
             className="hidden md:block text-base font-medium text-pale-green py-4 border-b-4 border-dark-gray hover:border-pale-green"
           >
             Contact Us
             </NavLink>
           <NavLink
-            to="/palehorse"
+            to="/mypalehorse"
             className="hidden md:block text-base font-medium text-pale-green py-4 border-b-4 border-dark-gray hover:border-pale-green"
           >
             Pale Horse
@@ -60,7 +55,7 @@ function Navbar() {
                   X
                 </button>
               <Link
-                to="/"
+                to="/homepage"
                 className="text-pale-green text-right hover:underline py-4 px-8 no-underline block"
               >
                 Home Page
@@ -72,13 +67,13 @@ function Navbar() {
                 Upload Work
               </Link>
               <Link
-                to="/contact"
+                to="/mycontactus"
                 className="text-pale-green text-right hover:underline py-4 px-8 no-underline block"
               >
                 Contact Us
               </Link>
               <Link
-                to="/palehorse"
+                to="/mypalehorse"
                 className="text-pale-green text-right hover:underline py-4 px-8 no-underline block"
               >
                 Pale Horse
@@ -89,12 +84,12 @@ function Navbar() {
               >
                 Profile
               </Link>
-              <a
-                href=""
+              <Link
+                to="/"
                 className="text-pale-green text-right hover:underline py-4 px-8 no-underline block"
               >
                 Logout
-              </a>
+              </Link>
             </div>
           </div>
         </div>

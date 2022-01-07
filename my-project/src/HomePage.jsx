@@ -2,10 +2,12 @@ import "./App.css";
 import { Fragment } from "react/cjs/react.production.min";
 import AllCards from "./Card";
 import PageIndex from "./PageIndex";
+import Navbar from "./Navbar";
 
 function HomePage() {
   return (
     <Fragment>
+      <Navbar />
       <div className="py-4 flex flex-col md:flex-row flex-wrap place-content-around m-auto">
         <p className="text-crimson py-2">Filter by:</p>
         <div className="px-4 py-2">

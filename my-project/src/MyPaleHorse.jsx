@@ -5,12 +5,12 @@ import Erza from "./pictures/Erza.png";
 import Misaki from "./pictures/Misaki.jpg";
 import Esdeath from "./pictures/Esdeath.jpg";
 import What from "./pictures/what.png";
-import LoginNav from "./LoginNav";
+import Navbar from "./Navbar";
 
-export default function PaleHorse() {
+export default function MyPaleHorse() {
   return (
     <Fragment>
-      <LoginNav />
+      <Navbar />
       <div
         id="incelbox"
         className="hidden mt-10 z-30 fixed justify-center w-screen h-screen"
