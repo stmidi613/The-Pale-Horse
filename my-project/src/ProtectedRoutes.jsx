@@ -1,5 +1,5 @@
-import { Outlet, Navigate } from 'react-router-dom'
-
+import { Outlet, Navigate } from 'react-router-dom';
+import {Authenticated} from "./Login";
 
 export default function ProtectedRoutes({Authenticated}){
     return (

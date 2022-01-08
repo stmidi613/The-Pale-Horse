@@ -15,10 +15,13 @@ import MyPaleHorse from "./MyPaleHorse";
 import MyProfile from './MyProfile'
 import ProtectedRoutes from "./ProtectedRoutes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { StrictMode } from "react";
 
 export default function App() {
   return (
     <>
+    <StrictMode>
+
       <Router>
         <Header />
         <Routes>
@@ -29,8 +32,8 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/palehorse" element={<PaleHorse />} />
           
-          <Route element={<ProtectedRoutes />}>
           <Route path="/afterlogin" element={<AfterLogin />} />
+          <Route element={<ProtectedRoutes />}>
           <Route path="/homepage" element={<HomePage />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/profile" element={<MyProfile />} />
@@ -42,6 +45,8 @@ export default function App() {
         
         </Routes>
       </Router>
+    
+    </StrictMode>
     </> 
   );
 }

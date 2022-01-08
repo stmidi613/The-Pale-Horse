@@ -8,7 +8,19 @@ import ProtectedRoutes from "./ProtectedRoutes";
 function Login() {
   const [userId, setUserId] = useState('');
   const [pw, setpw] = useState('');
-  const [Authenticated, setAuthenticated] = useState(true);
+  const [Authenticated, setAuthenticated] = useState(false);
+  
+  
+  function Authenticate(){
+    console.log(userId)
+    console.log(pw)
+    if(userId === "myname" && pw === "password"){
+      setAuthenticated(current => !current);
+    }else{
+      setAuthenticated(false);
+    }
+
+  }
   
   return (
     <Fragment>
@@ -41,7 +53,7 @@ function Login() {
           <br />
           <div className="flex justify-center">
             <Link
-              to="/afterlogin"
+              to="/login"
               onClick={Authenticate}
               className="text-center mt-8 w-32 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded"
             >
@@ -54,19 +66,9 @@ function Login() {
           Forgot UserId or Password?
         </button>
       </div>
+      {/* {<ProtectedRoutes Authenticated={Authenticated} />} */}
     </Fragment>
   );
-  
-  function Authenticate(){
-    console.log(userId)
-    console.log(pw)
-    if(userId === "myname" && pw === "password"){
-     setAuthenticated(true);
-    }else{
-     setAuthenticated(false);
-    }
-    console.log(Authenticated);
-  }
   
 }
 
