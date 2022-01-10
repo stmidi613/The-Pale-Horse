@@ -1,7 +1,19 @@
 import { Fragment } from "react/cjs/react.development";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
+import ProtectedRoutes from "./ProtectedRoutes";
+import Logout from "./Logout";
 
-export default function Profile() {
+export default function Profile(props) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    
+    console.log(props)
+
+    console.log()
+  };
+
   return (
     <Fragment>
       <Navbar />
@@ -46,13 +58,16 @@ export default function Profile() {
                   />
                   <button
                     className="relative float-right mx-2 w-18 bg-crimson hover:shadow-md text-pale-green px-2 rounded"
-                    onClick={NewPassword}
+                    onClick={() => NewPassword}
                   >
                     Edit
                   </button>
                 </div>
                 <br />
-                <div id="opacity-1" className="flex flex-wrap justify-center opacity">
+                <div
+                  id="opacity-1"
+                  className="flex flex-wrap justify-center opacity"
+                >
                   <label for="password" className="mr-2">
                     New Password:
                   </label>
@@ -65,7 +80,10 @@ export default function Profile() {
                   />
                 </div>
                 <br />
-                <div id="opacity-2" className="flex flex-wrap justify-center opacity">
+                <div
+                  id="opacity-2"
+                  className="flex flex-wrap justify-center opacity"
+                >
                   <label for="confirm-password" className="mr-2">
                     Confirm password:
                   </label>
@@ -116,6 +134,9 @@ export default function Profile() {
                 </p>
               </div>
             </div>
+            <div className="flex justify-center">
+              <Logout />
+            </div>
           </form>
         </div>
       </div>
@@ -123,16 +144,17 @@ export default function Profile() {
   );
 }
 
-function NewPassword(){
+function NewPassword() {
   document.getElementById("password").disabled = false;
   document.getElementById("confirm-password").disabled = false;
   document.getElementById("opacity-1").style.opacity = "100%";
   document.getElementById("opacity-2").style.opacity = "100%";
 }
 
-function SubmitPassword(){
+function SubmitPassword() {
   document.getElementById("password").disabled = true;
   document.getElementById("confirm-password").disabled = true;
   document.getElementById("opacity-1").style.opacity = "35%";
   document.getElementById("opacity-2").style.opacity = "35%";
 }
+

@@ -2,9 +2,16 @@ import "./App.css";
 import profilepic from "./pictures/profile.png";
 import hamburger from "./pictures/hamburgerbutton.svg";
 /* This example requires Tailwind CSS v2.0+ */
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
-function Navbar() {
+function Navbar(props) {
+
+  const navigate = useNavigate();
+
+  const onClickHandler = () => {
+    console.log(props);
+  }
+
   return (
     <div className="relative bg-dark-gray mt-2">
       <div className="px-4 sm:px-6">
@@ -84,12 +91,12 @@ function Navbar() {
               >
                 Profile
               </Link>
-              <Link
-                to="/"
+              <button
+                onClick={onClickHandler}
                 className="text-pale-green text-right hover:underline py-4 px-8 no-underline block"
               >
                 Logout
-              </Link>
+              </button>
             </div>
           </div>
         </div>

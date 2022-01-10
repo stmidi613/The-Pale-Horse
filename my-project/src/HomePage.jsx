@@ -4,7 +4,11 @@ import AllCards from "./Card";
 import PageIndex from "./PageIndex";
 import Navbar from "./Navbar";
 
-function HomePage() {
+function HomePage(props) {
+  const onClickHandle = () => {
+    console.log(props)
+    console.log(props)
+  }
   return (
     <Fragment>
       <Navbar />
@@ -29,7 +33,7 @@ function HomePage() {
         <div className="px-4 py-1">
           <label className="text-crimson mr-4">Keyword(s):</label>
           <input type="search" className="border-2 border-crimson" />
-          <button className="relative bottom-0.5 float-right mx-2 w-18 bg-crimson hover:shadow-md text-pale-green py-1 px-2 rounded">
+          <button onClick={onClickHandle} className="relative bottom-0.5 float-right mx-2 w-18 bg-crimson hover:shadow-md text-pale-green py-1 px-2 rounded">
             Search
           </button>
         </div>

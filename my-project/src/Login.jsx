@@ -5,10 +5,10 @@ import LoginNav from "./LoginNav";
 import { useState } from "react";
 import ProtectedRoutes from "./ProtectedRoutes";
 
-function Login() {
-  const [userId, setUserId] = useState('');
-  const [pw, setpw] = useState('');
-  
+function Login(props) {
+  const [details, setDetails] = useState({ userId: "", password: ""});
+
+
   return (
     <Fragment>
       <LoginNav />
@@ -18,29 +18,30 @@ function Login() {
           website.
         </h1>
         <h2 className="text-2xl pb-4 pt-10 text-crimson">Login</h2>
+        {/*Error!*/}
         <form>
           <label className="mr-7 text-crimson">UserId:</label>
           <input
             type="text"
             name="userid"
-            value={userId}
+            value={details.userId}
             className="my-2 border-2 border-crimson"
-            onChange={e => setUserId(e.target.value)}
+            onChange={(e) => setDetails({ ...details, userId: e.target.value })}
           />
           <br />
           <label className="mr-2 text-crimson">Password:</label>
           <input
             type="password"
             name="password"
-            value={pw}
+            value={details.password}
             className="my-2 border-2 border-crimson"
-            onChange={e => setpw(e.target.value)}
-
+            onChange={(e) =>
+              setDetails({ ...details, password: e.target.value })
+            }
           />
           <br />
           <div className="flex justify-center">
-            {}
-            <ProtectedRoutes userId={userId} pw={pw} setUserId={setUserId} setpw={setpw} />
+            <ProtectedRoutes details={details} Authenticated={props.Authenticated} setAuthenticated={props.setAuthenticated} />
           </div>
           <br />
         </form>
@@ -48,11 +49,8 @@ function Login() {
           Forgot UserId or Password?
         </button>
       </div>
-      {/* {<ProtectedRoutes Authenticated={Authenticated} />} */}
     </Fragment>
   );
-  
 }
 
 export default Login;
-
