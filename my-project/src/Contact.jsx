@@ -19,7 +19,7 @@ export default function Contact() {
             <div className="flex justify-center">
               <div className="md:w-3/4">
                 <div className="">
-                  <label className="">Name/UserId:</label>
+                  <label htmlFor="name" className="">Name/UserId:</label>
                   <input
                     type="text"
                     name="name"
@@ -28,7 +28,7 @@ export default function Contact() {
                 </div>
                 <br />
                 <div className="">
-                  <label className="">Email:</label>
+                  <label htmlFor="email" className="">Email:</label>
                   <input
                     type="email"
                     name="title"
@@ -37,7 +37,7 @@ export default function Contact() {
                 </div>
                 <br />
                 <div className="">
-                  <label className="">Issue:</label>
+                  <label htmlFor="date" className="">Issue:</label>
                   <input
                     type="text"
                     name="date"
@@ -45,7 +45,7 @@ export default function Contact() {
                   />
                 </div>
                 <br />
-                <label className="float-left">Summary:</label>
+                <label htmlFor="summary" className="float-left">Summary:</label>
                 <textarea
                   name="summary"
                   rows="5"
@@ -54,7 +54,7 @@ export default function Contact() {
                 />
                 <br />
                 <div className="mt-1">
-                  <label className="mr-1 lg:ml-32">
+                  <label htmlFor="checkbox" className="mr-1 lg:ml-32">
                     Would you like to flag an article?
                   </label>
                   <input type="checkbox" />

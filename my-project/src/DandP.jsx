@@ -39,13 +39,6 @@ function Policies() {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum."
       </p>
-      {/* <div className="my-12 ml-12">
-          <input type="checkbox" className="border-2 border-crimson" />
-          <label className="text-crimson ml-4">I agree.</label>
-          <button className="float-right mr-12 w-32 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded">
-          Submit
-          </button>
-        </div> */}
     </div>
         </Fragment>
   );

@@ -5,7 +5,7 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import Logout from "./Logout";
 
 export default function Profile(props) {
-  const onClick = () => {
+  function onClick(){
     console.log(props)
   }
 
@@ -53,7 +53,7 @@ export default function Profile(props) {
                   />
                   <button
                     className="relative float-right mx-2 w-18 bg-crimson hover:shadow-md text-pale-green px-2 rounded"
-                    onClick={() => NewPassword}
+                    onClick={NewPassword}
                   >
                     Edit
                   </button>
@@ -63,7 +63,7 @@ export default function Profile(props) {
                   id="opacity-1"
                   className="flex flex-wrap justify-center opacity"
                 >
-                  <label htmlFor="newpassword" for="password" className="mr-2">
+                  <label htmlFor="newpassword" className="mr-2">
                     New Password:
                   </label>
                   <input
@@ -131,7 +131,7 @@ export default function Profile(props) {
             </div>
           </form>
         </div>
-        <Logout />
+        <Logout Authenticated={props.Authenticated} setAuthenticated={props.Authenticated} />
       </div>
     </Fragment>
   );

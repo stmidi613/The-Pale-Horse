@@ -17,7 +17,7 @@ export default function Upload() {
             <div className="flex justify-center">
               <div className="m-2 md:m-0 md:w-3/5">
                 <div className="">
-                  <label className="">Author:</label>
+                  <label htmlFor="author" className="">Author:</label>
                   <input
                     type="text"
                     name="author"
@@ -30,7 +30,7 @@ export default function Upload() {
                 </p>
                 <br />
                 <div className="">
-                  <label className="">Title:</label>
+                  <label htmlFor="title" className="">Title:</label>
                   <input
                     type="text"
                     name="title"
@@ -39,7 +39,7 @@ export default function Upload() {
                 </div>
                 <br />
                 <div className="">
-                  <label className="">Date:</label>
+                  <label htmlFor="date" className="">Date:</label>
                   <input
                     type="date"
                     name="date"
@@ -51,7 +51,7 @@ export default function Upload() {
                 </p>
                 <br />
                 <div className="">
-                  <label className="">Topic:</label>
+                  <label htmlFor="topic" className="">Topic:</label>
                   <input
                     type="text"
                     name="topic"
@@ -59,7 +59,7 @@ export default function Upload() {
                   />
                 </div>
                 <br />
-                <label className="float-left">Summary:</label>
+                <label htmlFor="summary" className="float-left">Summary:</label>
                 <textarea
                   name="summary"
                   rows="4"
@@ -68,7 +68,7 @@ export default function Upload() {
                 />
                 <br />
                 <div className="mt-4">
-                  <label className="">Image:</label>
+                  <label htmlFor="image" className="">Image:</label>
                   <input
                     type="url"
                     name="image"
@@ -78,7 +78,7 @@ export default function Upload() {
                     Upload
                   </button>
                   <br />
-                  <label className="md:ml-20 mr-2 text-center">
+                  <label htmlFor="checkbox" className="md:ml-20 mr-2 text-center">
                     Use profile picture
                   </label>
                   <input type="checkbox" />

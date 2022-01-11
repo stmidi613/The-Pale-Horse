@@ -1,6 +1,6 @@
 import { useNavigate, Navigate } from "react-router-dom";
 import { useState } from "react";
-import HomePage from "./HomePage";
+import Profile from "./MyProfile";
 
 function ProtectedRoutes(props) {
   const [error, setError] = useState("");
@@ -30,6 +30,7 @@ function ProtectedRoutes(props) {
           className="text-center mt-8 w-32 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded"
         >Login
         </button>
+        {<Profile Authenticated={props.Authenticated} setAuthenticated={props.setAuthenticated} />}
     </div>
     
   );

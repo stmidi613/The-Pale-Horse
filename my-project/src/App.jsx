@@ -19,7 +19,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
 import { StrictMode } from "react";
 
@@ -69,7 +68,7 @@ export default function App() {
                   element={<HomePage />}
                 />
                 <Route path="/upload" element={<Upload />} />
-                <Route path="/profile" element={<MyProfile LoggedOut={() => setAuthenticated(false)} />} />
+                <Route path="/profile" element={<MyProfile Authenticated={Authenticated} />} />
                 <Route path="/mycontactus" element={<MyContactUs />} />
                 <Route path="/mypalehorse" element={<MyPaleHorse />} />
               </>

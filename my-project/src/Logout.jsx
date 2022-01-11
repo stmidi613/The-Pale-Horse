@@ -1,16 +1,18 @@
 import React, { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 
-export default function LogOut({LoggedOut}) {
-  const logoutDisplay = document.getElementById("logout");
+export default function LogOut(props) {
 
-  const DisplayLogout = () => {
-    logoutDisplay.style.display = "flex";
-  }
+  const navigate = useNavigate();
 
-  function RemoveBox() {
-    logoutDisplay.style.display = "none";
-    console.log(LoggedOut)
+  const LogOutClick = () => {
+    if(props.Authenticated){
+      props.setAuthenticated(false);
+      navigate("/")
+    }else{
+      navigate("/");
+    }
   }
 
   return (
@@ -26,7 +28,7 @@ export default function LogOut({LoggedOut}) {
           <div className="flex space-x-10">
             <button
               className="w-24 my-2 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded"
-              onClick={RemoveBox}
+              onClick={LogOutClick}
             >
               Yes
             </button>
@@ -49,5 +51,13 @@ export default function LogOut({LoggedOut}) {
       </div>
     </Fragment>
   );
+}
+
+function DisplayLogout(){
+  document.getElementById("logout").style.display = "flex";
+}
+
+function RemoveBox(){
+  document.getElementById("logout").style.display = "none";
 }
 
