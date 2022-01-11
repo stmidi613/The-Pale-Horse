@@ -5,14 +5,9 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import Logout from "./Logout";
 
 export default function Profile(props) {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    
+  const onClick = () => {
     console.log(props)
-
-    console.log()
-  };
+  }
 
   return (
     <Fragment>
@@ -26,22 +21,22 @@ export default function Profile(props) {
             <div className="flex justify-center items-center">
               <div className="w-screen md:w-full">
                 <div className="flex flex-wrap justify-center pt-4">
-                  <label className="float-left pl-5">Name/UserId:</label>
+                  <label htmlFor="name" className="float-left pl-5">Name/UserId:</label>
                   <input
                     type="text"
                     name="name"
                     className="flex justify-center border border-crimson ml-2 md:w-3/5"
                   />
-                  <button className="relative float-right mx-2 w-18 bg-crimson hover:shadow-md text-pale-green px-2 rounded">
+                  <button onClick={onClick} className="relative float-right mx-2 w-18 bg-crimson hover:shadow-md text-pale-green px-2 rounded">
                     Edit
                   </button>
                 </div>
                 <br />
                 <div className="flex flex-wrap justify-center">
-                  <label className="pl-20">Email:</label>
+                  <label htmlFor="email" className="pl-20">Email:</label>
                   <input
                     type="email"
-                    name="title"
+                    name="email"
                     className="border border-crimson ml-2 md:w-3/5"
                   />
                   <button className="relative float-right mx-2 w-18 bg-crimson hover:shadow-md text-pale-green px-2 rounded">
@@ -50,7 +45,7 @@ export default function Profile(props) {
                 </div>
                 <br />
                 <div className="flex flex-wrap justify-center">
-                  <label className="pl-11 mr-2">Password:</label>
+                  <label htmlFor="password" className="pl-11 mr-2">Password:</label>
                   <input
                     type="password"
                     name="password"
@@ -68,13 +63,13 @@ export default function Profile(props) {
                   id="opacity-1"
                   className="flex flex-wrap justify-center opacity"
                 >
-                  <label for="password" className="mr-2">
+                  <label htmlFor="newpassword" for="password" className="mr-2">
                     New Password:
                   </label>
                   <input
                     id="password"
                     type="password"
-                    name="password"
+                    name="newpassword"
                     className="mr-12 border border-crimson md:w-3/5"
                     disabled
                   />
@@ -84,7 +79,7 @@ export default function Profile(props) {
                   id="opacity-2"
                   className="flex flex-wrap justify-center opacity"
                 >
-                  <label for="confirm-password" className="mr-2">
+                  <label htmlFor="confirm-password" className="mr-2">
                     Confirm password:
                   </label>
                   <input
@@ -107,7 +102,7 @@ export default function Profile(props) {
                 </div>
                 <br />
                 <div className="flex flex-wrap justify-center">
-                  <label className="pl-24">Image:</label>
+                  <label htmlFor="image" className="pl-24">Image:</label>
                   <input
                     type="url"
                     name="image"
@@ -119,7 +114,7 @@ export default function Profile(props) {
                 </div>
                 <br />
                 <div className="flex flex-wrap justify-center">
-                  <label className="pl-20">Motto:</label>
+                  <label htmlFor="motto" className="pl-20">Motto:</label>
                   <input
                     type="text"
                     name="motto"
@@ -134,11 +129,9 @@ export default function Profile(props) {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center">
-              <Logout />
-            </div>
           </form>
         </div>
+        <Logout />
       </div>
     </Fragment>
   );
@@ -157,4 +150,3 @@ function SubmitPassword() {
   document.getElementById("opacity-1").style.opacity = "35%";
   document.getElementById("opacity-2").style.opacity = "35%";
 }
-
