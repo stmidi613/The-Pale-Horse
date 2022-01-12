@@ -9,7 +9,8 @@ function Navbar(props) {
   const navigate = useNavigate();
 
   const onClickHandler = () => {
-    console.log(props);
+    localStorage.clear();
+    navigate("/");
   }
 
   return (
@@ -51,8 +52,8 @@ function Navbar(props) {
               </NavLink>
           </div>
           <div className="position-right flex justify-end flex-col">
-            <button className="m-auto pl-40 pb-6" onClick={dropdownMenu}>
-              <img src={hamburger} alt="" className="md:hidden pr-2" />
+            <button className="md:hidden m-auto pl-40 pb-6" onClick={dropdownMenu}>
+              <img src={hamburger} alt="" className="pr-2" />
             </button>
             <div id="dropdown" className="hidden left-1 bg-dark-gray w-64 z-10">
                 <button
@@ -91,12 +92,15 @@ function Navbar(props) {
               >
                 Profile
               </Link>
-              <button
+              {/* <div className="flex justify-end"> */}
+              <Link
+                to="/"
                 onClick={onClickHandler}
-                className="text-pale-green text-right hover:underline py-4 px-8 no-underline block"
-              >
+                className="text-pale-green text-right hover:underline pb-6 pt-2 px-8 no-underline block"
+                >
                 Logout
-              </button>
+              </Link>
+              {/* </div> */}
             </div>
           </div>
         </div>

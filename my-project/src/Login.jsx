@@ -40,7 +40,7 @@ function Login(props) {
           />
           <br />
           <div className="flex justify-center">
-            <ProtectedRoutes details={details} Authenticated={props.Authenticated} setAuthenticated={props.setAuthenticated} />
+            {<ProtectedRoutes details={details} Authenticated={props.Authenticated} setAuthenticated={props.setAuthenticated} />}
           </div>
           <br />
         </form>

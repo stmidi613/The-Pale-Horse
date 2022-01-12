@@ -15,6 +15,7 @@ import MyContactUs from "./MyContactUs";
 import MyPaleHorse from "./MyPaleHorse";
 import MyProfile from "./MyProfile";
 import ProtectedRoutes from "./ProtectedRoutes";
+import Logout from "./Logout";
 import {
   BrowserRouter as Router,
   Routes,
@@ -23,7 +24,7 @@ import {
 import { StrictMode } from "react";
 
 export default function App() {
-  const [Authenticated, setAuthenticated] = useState(false);
+  const [Authenticated, setAuthenticated] = useState(null);
 
   useEffect(() => {
     const a = localStorage.getItem("Authenticated");
@@ -33,6 +34,10 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem("Authenticated", Authenticated);
   }, [Authenticated]);
+
+  function LogOutClick(){
+    setAuthenticated(false);
+  }
 
   return (
     <>
@@ -68,13 +73,14 @@ export default function App() {
                   element={<HomePage />}
                 />
                 <Route path="/upload" element={<Upload />} />
-                <Route path="/profile" element={<MyProfile Authenticated={Authenticated} />} />
+                <Route path="/profile" element={<MyProfile Authenticated={Authenticated} setAuthenticated={setAuthenticated} />} />
                 <Route path="/mycontactus" element={<MyContactUs />} />
                 <Route path="/mypalehorse" element={<MyPaleHorse />} />
+                <Route path="/logout" element={<Logout onClick={LogOutClick} />} />
               </>
             )}
 
-            <Route path="*" element={<NoMatchPage />} />
+            <Route path="*" element={<NoMatchPage /> } />
           </Routes>
         </Router>
       </StrictMode>

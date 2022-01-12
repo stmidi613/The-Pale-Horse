@@ -18,9 +18,10 @@ function ProtectedRoutes(props) {
         props.setAuthenticated(true);
         navigate("afterlogin")
       } else {
-        props.setAuthenticated(false);
+        props.setAuthenticated(null);
         <Navigate replace to="/login" />;
       }
+      {<Profile Authenticated={props.Authenticated} setAuthenticated={props.setAuthenticated} />}
       console.log(props);
     };
     return (
@@ -30,7 +31,6 @@ function ProtectedRoutes(props) {
           className="text-center mt-8 w-32 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded"
         >Login
         </button>
-        {<Profile Authenticated={props.Authenticated} setAuthenticated={props.setAuthenticated} />}
     </div>
     
   );

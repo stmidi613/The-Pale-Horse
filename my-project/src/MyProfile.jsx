@@ -1,7 +1,5 @@
 import { Fragment } from "react/cjs/react.development";
 import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
-import ProtectedRoutes from "./ProtectedRoutes";
 import Logout from "./Logout";
 
 export default function Profile(props) {

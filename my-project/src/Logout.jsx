@@ -2,17 +2,13 @@ import React, { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
-export default function LogOut(props) {
+export default function LogOut() {
 
   const navigate = useNavigate();
 
-  const LogOutClick = () => {
-    if(props.Authenticated){
-      props.setAuthenticated(false);
-      navigate("/")
-    }else{
-      navigate("/");
-    }
+  function LogOutClick(){
+    navigate("/");
+    localStorage.clear();
   }
 
   return (
