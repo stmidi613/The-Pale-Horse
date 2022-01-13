@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./App.css";
 
 export default function LogOut() {
@@ -7,8 +7,8 @@ export default function LogOut() {
   const navigate = useNavigate();
 
   function LogOutClick(){
-    navigate("/");
     localStorage.clear();
+    navigate("/");
   }
 
   return (
@@ -23,8 +23,8 @@ export default function LogOut() {
           </h1>
           <div className="flex space-x-10">
             <button
-              className="w-24 my-2 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded"
               onClick={LogOutClick}
+              className="w-24 my-2 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded"
             >
               Yes
             </button>

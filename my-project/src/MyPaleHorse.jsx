@@ -13,29 +13,30 @@ export default function MyPaleHorse() {
       <Navbar />
       <div
         id="incelbox"
-        className="hidden mt-10 z-30 fixed justify-center w-screen h-screen"
-      >
-        <div className="flex flex-col justify-center items-center border-2 border-crimson bg-offwhite w-3/4 h-1/2">
-          <h1 className="p-4 text-center supertext">You're an Incel!</h1>
+        className="alertbox hidden z-30 fixed justify-center w-screen md:h-full"
+        >
+        <div className="flex flex-col justify-center items-center border-2 border-crimson bg-offwhite md:w-3/4 h-1/2">
+          <h1 className="p-4 text-center w-full text-5xl md:supertext">You're an Incel!</h1>
           <button
             className="w-24 my-2 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded"
             onClick={RemoveAlert}
-          >
+            >
             Ok
           </button>
         </div>
       </div>
+      
       <div
         id="normalbox"
-        className="hidden mt-10 z-30 fixed justify-center w-screen h-screen"
+        className="alertbox hidden z-30 fixed md:justify-center w-screen h-96 md:h-screen"
       >
-        <div className="flex flex-col justify-center items-center border-2 border-crimson bg-offwhite w-3/4 h-1/2">
-          <h1 className="mt-32 w-3/4 md:w-1/2 text-center text-xl">
+        <div className="flex flex-col justify-center items-center border-2 border-crimson bg-offwhite md:w-3/4 h-1/2">
+          <h1 className="w-full md:w-1/2 text-center text-xl">
             You might be a normal individual who can live a regular life with a
             wife and family.
           </h1>
           <button
-            className="mt-12 w-24 my-2 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded"
+            className="mt:4 md:mt-12 w-24 my-2 bg-crimson hover:shadow-md text-pale-green py-2 px-4 rounded"
             onClick={RemoveAlert}
           >
             Ok

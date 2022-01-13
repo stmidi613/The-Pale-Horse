@@ -18,7 +18,7 @@ function ProtectedRoutes(props) {
         props.setAuthenticated(true);
         navigate("afterlogin")
       } else {
-        props.setAuthenticated(null);
+        props.setAuthenticated(false);
         <Navigate replace to="/login" />;
       }
       {<Profile Authenticated={props.Authenticated} setAuthenticated={props.setAuthenticated} />}

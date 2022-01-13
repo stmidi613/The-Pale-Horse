@@ -49,14 +49,14 @@ function AllCards() {
 
   const Card = Cards.map((card) => (
     <Fragment>
-      <div className="flex border-2 border-crimson rounded card-clamp h-48 bg-offwhite m-4 hover:shadow-lg">
+      <div className="flex flex-col justify-center xs:flex-row border-2 border-crimson rounded card-clamp md:h-48 bg-offwhite m-4 hover:shadow-lg pt-1 xs:pt-0">
         <div key={card.id}>
           <img
             src={card.image}
             alt="#/"
-            className="bg-light-gray border-2 border-crimson rounded w-32 h-32 m-2"
+            className="bg-light-gray flex justify-center border-2 border-crimson rounded w-32 h-32 m-auto xs:m-2"
           />
-          <p className="flex flex-row ml-2 pt-1">
+          <p className="flex justify-center flex-row ml-2 pt-1">
             Rating:{" "}
             <span className="m-1">
               <img src={star} alt="#" />
@@ -75,7 +75,7 @@ function AllCards() {
             </span>
           </p>
         </div>
-        <ul className="flex flex-col space-y-2 w-64 ml-4 mt-2">
+        <ul className="flex flex-col justify-center space-y-2 w-64 ml-4 mt-2">
           <li key={card.id}>Title: {card.Title}</li>
           <li>Author: {card.Author}</li>
           <li>Date: {card.date}</li>
@@ -91,7 +91,7 @@ function AllCards() {
 
   return (
     <Fragment>
-      <div className="flex flex-row flex-wrap justify-center">{Card}</div>
+      <div className="flex flex-wrap justify-center">{Card}</div>
     </Fragment>
   );
 }

@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -10,6 +12,10 @@ module.exports = {
         'dark-green-hover': '#386641',
         'white': "#fff",
         'offwhite': "#fcfafa"
+      },
+      screens: {
+        'xs': '425px',
+        ...defaultTheme.screens,
       }
     
   },

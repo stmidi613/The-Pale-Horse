@@ -24,7 +24,7 @@ import {
 import { StrictMode } from "react";
 
 export default function App() {
-  const [Authenticated, setAuthenticated] = useState(null);
+  const [Authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
     const a = localStorage.getItem("Authenticated");
@@ -35,17 +35,13 @@ export default function App() {
     localStorage.setItem("Authenticated", Authenticated);
   }, [Authenticated]);
 
-  function LogOutClick(){
-    setAuthenticated(false);
-  }
-
   return (
     <>
       <StrictMode>
         <Router>
           <Header />
           <Routes>
-            {!Authenticated && (
+            
               <>
                 <Route path="/" element={<HeroHome />} />
                 <Route path="/newAcc" element={<NewAcc />} />
@@ -62,25 +58,34 @@ export default function App() {
                   }
                 />
               </>
-            )}
+            )
 
             {Authenticated && (
               <>
                 <Route element={<ProtectedRoutes />} />
                 <Route path="login/afterlogin" element={<AfterLogin />} />
-                <Route
-                  path="/homepage"
-                  element={<HomePage />}
-                />
+                <Route path="/homepage" element={<HomePage />} />
                 <Route path="/upload" element={<Upload />} />
-                <Route path="/profile" element={<MyProfile Authenticated={Authenticated} setAuthenticated={setAuthenticated} />} />
+                <Route
+                  path="/profile"
+                  element={
+                    <MyProfile
+                      Authenticated={Authenticated}
+                      setAuthenticated={setAuthenticated}
+                    />
+                  }
+                />
+                <Route
+                  path="/logout"
+                  element={<Logout />}
+                />
+
                 <Route path="/mycontactus" element={<MyContactUs />} />
                 <Route path="/mypalehorse" element={<MyPaleHorse />} />
-                <Route path="/logout" element={<Logout onClick={LogOutClick} />} />
               </>
             )}
 
-            <Route path="*" element={<NoMatchPage /> } />
+            <Route path="*" element={<NoMatchPage />} />
           </Routes>
         </Router>
       </StrictMode>

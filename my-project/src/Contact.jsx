@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <Fragment>
       <LoginNav />
-      <div className="flex flex-col m-8">
+      <div className="flex flex-col my-8">
         <h1 className="flex justify-center text-crimson text-3xl underline">
           Contact Us
         </h1>
@@ -19,38 +19,38 @@ export default function Contact() {
             <div className="flex justify-center">
               <div className="md:w-3/4">
                 <div className="">
-                  <label htmlFor="name" className="">Name/UserId:</label>
+                  <label htmlFor="name" className="m-0.5">Name/UserId:</label>
                   <input
                     type="text"
                     name="name"
-                    className="border border-crimson ml-6 md:w-3/5"
+                    className="border border-crimson ml-2 md:ml-6 md:w-3/5"
                   />
                 </div>
                 <br />
                 <div className="">
-                  <label htmlFor="email" className="">Email:</label>
+                  <label htmlFor="email" className="m-0.5">Email:</label>
                   <input
                     type="email"
                     name="title"
-                    className="border border-crimson ml-20 md:w-3/5"
+                    className="border border-crimson ml-16 md:ml-20 md:w-3/5"
                   />
                 </div>
                 <br />
                 <div className="">
-                  <label htmlFor="date" className="">Issue:</label>
+                  <label htmlFor="date" className="m-0.5">Issue:</label>
                   <input
                     type="text"
                     name="date"
-                    className="border border-crimson ml-20 md:w-3/5"
+                    className="border border-crimson ml-16 md:ml-20 md:w-3/5"
                   />
                 </div>
                 <br />
-                <label htmlFor="summary" className="float-left">Summary:</label>
+                <label htmlFor="summary" className="float-left m-0.5">Summary:</label>
                 <textarea
                   name="summary"
                   rows="5"
                   cols=""
-                  className="border border-crimson ml-12 md:w-4/5"
+                  className="border border-crimson ml-8 md:ml-12 md:w-4/5"
                 />
                 <br />
                 <div className="mt-1">

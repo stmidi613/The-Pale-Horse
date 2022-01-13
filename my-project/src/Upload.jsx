@@ -5,7 +5,7 @@ export default function Upload() {
   return (
     <Fragment>
       <Navbar />
-      <div className="flex flex-col m-8">
+      <div className="flex flex-col md:m-8">
         <h1 className="flex justify-center text-crimson text-3xl underline">
           Upload Your Work
         </h1>
