@@ -75,7 +75,7 @@ function AllCards() {
             </span>
           </p>
         </div>
-        <ul className="flex flex-col justify-center space-y-2 w-64 ml-4 mt-2">
+        <ul className="flex flex-col space-y-2 w-64 ml-4 mt-2">
           <li key={card.id}>Title: {card.Title}</li>
           <li>Author: {card.Author}</li>
           <li>Date: {card.date}</li>
